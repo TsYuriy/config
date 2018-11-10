@@ -9,11 +9,19 @@
 </head>
 
 <body>
-<script>
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
-    }
-</script>
+    <script>
+        var a = "";
+        let add = function (text) {
+
+            this.text = text;
+            return a += text;
+        }
+
+        add('I ');
+        add("love ");
+        add("JS");
+        console.log(a);
+    </script>
 </body>
 
 </html>
