@@ -16,10 +16,20 @@ let appData = {
     savings: false
 };
 
-appData.expenses[prompt("Введите обязательную статью расходов в этом месяце","")] = +prompt("Во сколько обойдется?", "");
-appData.expenses[prompt("Введите обязательную статью расходов в этом месяце","")] = +prompt("Во сколько обойдется?", "");
+for(let i = 0; i < 2; i++){
+    appData.expenses[prompt("Введите обязательную статью расходов в этом месяце","")] = +prompt("Во сколько обойдется?", "");
+}
 
+// let i = 0;
+// while(i<2){
+//     appData.expenses[prompt("Введите обязательную статью расходов в этом месяце","")] = +prompt("Во сколько обойдется?", "");
+//     i++;
+// }
+let i = 0;
 
+// do{
+// appData.expenses[prompt("Введите обязательную статью расходов в этом месяце","")] = +prompt("Во сколько обойдется?", "");
+// i++;} while(i<2);
 
-alert(appData.budget/MONTH);
+console.log(appData.budget/MONTH);
 
