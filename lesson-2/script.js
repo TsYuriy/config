@@ -23,17 +23,26 @@ for (let i = 0; i < 2; i++) {
     if ((typeof (a)) === 'string' && (typeof (a)) != null && a != '' &&
         (typeof (b)) != null && b != "" && a.length < 50 && b.length < 50) {
         appData.expenses[a] = b;
-        console.log(i);
+        console.log('done');
     } else { 
         i--;           
-        console.log('+');
+        console.log('некорректные данные');
     }
 };
 
 appData.moneyPerDay = appData.budget / MONTH;
 
-console.log(appData.moneyPerDay);
-console.log(appData.expenses);
+alert("Ежедневный бюджкт " + appData.moneyPerDay);
+
+if(appData.moneyPerDay < 100){
+    console.log('Минимальный уровень достатка');
+}else if(appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+    console.log('Средний уровень достатка');
+}else if(appData.moneyPerDay > 2000){
+    console.log('Высокий уровень достатка');
+}else{
+    console.log('Произошла ошибка');
+}
 
 // let i = 0;
 // while(i<2){
