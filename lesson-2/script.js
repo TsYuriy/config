@@ -32,7 +32,7 @@ for (let i = 0; i < 2; i++) {
 
 appData.moneyPerDay = appData.budget / MONTH;
 
-alert("Ежедневный бюджкт " + appData.moneyPerDay);
+alert("Ежедневный бюджeт " + appData.moneyPerDay);
 
 if(appData.moneyPerDay < 100){
     console.log('Минимальный уровень достатка');
