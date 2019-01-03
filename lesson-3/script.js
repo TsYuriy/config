@@ -8,8 +8,8 @@ function start() {
   money = +prompt('Ваш бюджет на месяц?', '');
   time = prompt('Введите дату в формате YYYY-MM-DD', '');
 
-  while (isNaN(money) || money == "" || money == null ) {
-    money = prompt("Ваш бюджет?", "");
+  while (isNaN(money) || money == '' || money == null ) {
+    money = prompt('Ваш бюджет?', '');
   }
 }
 
@@ -41,7 +41,6 @@ let appData = {
         
       }
     }
-
     
   },
   detectDayBudget: function () {
@@ -59,5 +58,24 @@ let appData = {
       console.log('Произошла ошибка');
     }
   },
+  checkSavings: function(){
+    if (appData.savings == true) {
+      let save = +prompt('Какова сумма накоплений?', ''),
+          percent = +prompt('Под какой процент?', '');
+
+      appData.monthIncome = save/100/12*percent;
+      alert('Доход в месяц с вашего депозита: ' + appData.monthIncome);    
+    }
+  },
+  chooseOptExpenses: function(){
+    for(let i = 1; i < 3; i++){
+      let opt = prompt('Статья необязательных расходов?','');
+      appData.optionalExpenses[i] = opt;
+    }
+  },
+  chooseIncome: function(){
+    let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
+    appData.income = items.split(', ');
+  } 
   
 };
