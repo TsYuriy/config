@@ -13,7 +13,7 @@ function start() {
   }
 }
 
-// start();
+start();
 
 let appData = {
   budget: money,
@@ -82,15 +82,16 @@ let appData = {
     let tmp = prompt('Может что то ещё?', '');
     tmp?appData.income.push(tmp):appData.income;
     appData.income.sort();
+
+    appData.income.forEach(function(item, i){  
+      console.log("Способы доп. заработка: " + (i+1) + '-' + item);
+    });
+    
+    for(var key in appData){
+      console.log("Наша программа включает в себя данные: " + key);
+    }
   } 
   
 };
 
 appData.chooseIncome();
-appData.income.forEach(function(item, i){  
-  console.log("Способы доп. заработка: " + (i+1) + '-' + item);
-});
-
-for(var key in appData){
-  console.log("Наша программа включает в себя данные: " + key);
-}
