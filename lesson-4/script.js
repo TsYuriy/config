@@ -13,7 +13,7 @@ function start() {
   }
 }
 
-start();
+// start();
 
 let appData = {
   budget: money,
@@ -87,11 +87,12 @@ let appData = {
       console.log("Способы доп. заработка: " + (i+1) + '-' + item);
     });
     
-    for(var key in appData){
-      console.log("Наша программа включает в себя данные: " + key);
-    }
+    
   } 
   
 };
 
 appData.chooseIncome();
+for(var key in appData){
+  console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
+}
