@@ -1,0 +1,12 @@
+<input id="age" value="30">
+<script>
+	let age = document.getElementById('age');
+
+	function showUser(surname, name) {
+		
+		alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);		
+	}
+	age.addEventListener('change', showUser.bind(age, 'Petya', 'Ivanov'));
+	showUser.call(age, 'ivan', 'Petrov');
+	showUser.apply(age, ['ivan', 'Petrov']);
+</script>
