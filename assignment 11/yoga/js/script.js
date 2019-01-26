@@ -81,14 +81,26 @@ window.addEventListener('DOMContentLoaded', function(){  // как только 
     setClock('timer', deadLine);
 
 
-    let more = document.querySelector('.more'),
+    let content = document.querySelector('.content'),
+        more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        popupClose = document.querySelector('.popup-close');
+        close = document.querySelector('.popup-close');   
+    
 
-    more.addEventListener('click', function(){
-        overlay.style.display = 'block';
-        this.classList.add('more-splash');
-        document.body.style.overflow = 'hidden';
+    content.addEventListener('click', function(event){
+        
+        let target = event.target;        
+        if(target && target.classList.contains('description-btn') || target && target.classList.contains('more')){
+            overlay.style.display = 'block';
+            this.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    close.addEventListener('click', function(){
+        overlay.style.display = 'none';
+        this.classList.remove('more-splash');
+        document.body.style.overflow = '';
     });
 
 
