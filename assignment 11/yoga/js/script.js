@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function(){  // как только 
         }
     });
 
-    let deadLine = '2019-01-18';
+    let deadLine = '2019-01-29';
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date()),
@@ -79,6 +79,29 @@ window.addEventListener('DOMContentLoaded', function(){  // как только 
     }
 
     setClock('timer', deadLine);
+
+
+    let content = document.querySelector('.content'),
+        more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');   
+    
+
+    content.addEventListener('click', function(event){
+        
+        let target = event.target;        
+        if(target && target.classList.contains('description-btn') || target && target.classList.contains('more')){
+            overlay.style.display = 'block';
+            this.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    close.addEventListener('click', function(){
+        overlay.style.display = 'none';
+        this.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 
 
 });
