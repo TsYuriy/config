@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function(){  // как только 
         }
     });
 
-    let deadLine = '2019-01-18';
+    let deadLine = '2019-01-29';
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date()),
@@ -79,6 +79,17 @@ window.addEventListener('DOMContentLoaded', function(){  // как только 
     }
 
     setClock('timer', deadLine);
+
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        popupClose = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function(){
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
 
 
 });
