@@ -1,3 +1,4 @@
 <?php 
 
-echo $_SERVER[‘REMOTE_ADDR‘];
+echo $_SERVER[‘127.0.0.1‘];
+?>
